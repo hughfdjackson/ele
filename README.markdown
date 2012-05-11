@@ -3,7 +3,7 @@
 Ele is a super-simple logging library.  It lets you:
 
 * store any js value directly for later inspection/storage
-* wrap any function so that its occurances get logged automatically
+* wrap any function to create a new function whose return values are auto-logged
 * See the timestamp associated with any occurance of logging
 
 ## API 
