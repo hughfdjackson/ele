@@ -22,5 +22,6 @@ test('wrap', function(){
       , rand= log.wrap(Math.random)
       , res = rand()
 
-    equal(res, log.logs[0].val[0])
+    ok(res, 'res isn\'t simply undefined')
+    equal(res, log.logs[0].val)
 })

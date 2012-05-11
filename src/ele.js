@@ -25,8 +25,9 @@ void function(root){
             var _this = this
 
             return function(){ 
-                _this.log([].slice.call(arguments))
-                fn.apply(this, arguments)
+                var res = fn.apply(this, arguments)
+                _this.log(res)
+                return res
             }  
         }
     })
