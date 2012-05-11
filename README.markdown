@@ -6,6 +6,10 @@ Ele is a super-simple logging library.  It lets you:
 * wrap any function to create a new function whose return values are auto-logged
 * See the timestamp associated with any occurance of logging
 
+There's very little magic involved, though **so be warned**:
+
+* objects that get passed in to be logged won't be cloned or serialised on the way in;  that decision is up to you.
+
 ## API 
 
 Creating a logger instance is as easy as calling the library function:
