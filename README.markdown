@@ -7,7 +7,7 @@ Ele is a super-simple logging library.  It lets you:
 * See the timestamp associated with any occurance of logging
 
 
-\* *'JSON copy' refers to using JSON.stringify, then JSON.parse on a value, returning a JS value that won't be mutated later.
+\* *'JSON copy' refers to using JSON.stringify, then JSON.parse on a value, returning a JS value that won't be mutated later.*
 
 ## API 
 
