@@ -2,9 +2,12 @@
 
 Ele is a super-simple logging library.  It lets you:
 
-* stores clones of js values (via JSON with objects)
+* store clones of non-function JS values (taking a 'JSON copy'\* of all object values)
 * wrap any function to create a new function whose return values are auto-logged
 * See the timestamp associated with any occurance of logging
+
+
+\* *'JSON copy' refers to using JSON.stringify, then JSON.parse on a value, returning a JS value that won't be mutated later.
 
 ## API 
 
