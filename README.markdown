@@ -36,6 +36,7 @@ All logs are stored in the .logs array, making access nice and easy:
 Logs are kept in the format:
 
 ```javascript
+
     firstLog.timestamp // the timestamp for the log's creation
     firstLog.val       // whatever value was logged
 
@@ -48,6 +49,7 @@ If you need to change what cloning method is used, just replace `.clone` with yo
 For Example
 
 ```javascript
+
     // replace with an identity function for no-clone
     log.clone = function(o){ return o }
 
