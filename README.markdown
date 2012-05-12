@@ -63,8 +63,14 @@ For Example
 With impure functions (like Math.random, for instance), it'd be nice to conveniently wrap it with a logger, letting us log each and every output from it.  Used properly, this might let us (for instance) play back a game session where random chance is involved.  This can be achieved with the .wrap method:
 
 ```javascript
-    var random      = log.wrap(Math.random)
+    var log         = ele()
+      , random      = log.wrap(Math.random, 'random')
       , randomNum   = random()
-```
 
-The log's .val property will be the return value of `random`
+    var firstLog    = log.logs[0]
+
+    firstLog.val.args   // an array of arguments that random was called with
+    firstLog.val.name   // 'random', the second argument passed to log.wrap
+    firstLog.val.result // the value returned from the wrapped function
+
+```

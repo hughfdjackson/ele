@@ -47,9 +47,13 @@ test('log delegates to clone', function(){
 
 test('wrap', function(){
     var log = ele()
-      , rand= log.wrap(Math.random)
-      , res = rand()
+      , rand= log.wrap(Math.random, 'random')
+      , res = rand('foo')
+      , val = log.logs[0].val
 
     ok(res, 'res isn\'t simply undefined')
-    equal(res, log.logs[0].val)
+    equal(res, val.result)
+    equal('foo', val.args[0])
+    ok(val.args instanceof Array)
+    equal(val.name, 'random')
 })

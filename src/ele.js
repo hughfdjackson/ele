@@ -11,6 +11,8 @@ void function(root){
 
     var extend = function(t, f){ for ( var p in f ) t[p] = f[p]; return t }
 
+    var slice  = Array.prototype.slice
+
 
     // library
     var ele = factory({
@@ -35,12 +37,12 @@ void function(root){
 
         // returns a function that can be called as normal
         // but will also log the return value
-      , wrap: function(fn){
+      , wrap: function(fn, name){
             var _this = this
 
             return function(){ 
                 var res = fn.apply(this, arguments)
-                _this.log(res)
+                _this.log({ result: res, args: slice.apply(arguments), name: name })
                 return res
             }  
         }
