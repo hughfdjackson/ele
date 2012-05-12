@@ -72,5 +72,4 @@ With impure functions (like Math.random, for instance), it'd be nice to convenie
     firstLog.val.args   // an array of arguments that random was called with
     firstLog.val.name   // 'random', the second argument passed to log.wrap
     firstLog.val.result // the value returned from the wrapped function
-
 ```
