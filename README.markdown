@@ -43,7 +43,7 @@ Logs are kept in the format:
 
 ### Custom Cloning
 
-If you need to change what cloning method is used, just override the `clone` function.  done!
+If you need to change what cloning method is used, just replace `.clone` with your own custom function.  The method takes one argument (the value to be cloned), and returns a clone.
 
 ### Wrapping functions for logging purposes
 
