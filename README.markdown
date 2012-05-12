@@ -2,13 +2,9 @@
 
 Ele is a super-simple logging library.  It lets you:
 
-* store any js value directly for later inspection/storage
+* stores clones of js values (via JSON with objects)
 * wrap any function to create a new function whose return values are auto-logged
 * See the timestamp associated with any occurance of logging
-
-There's very little magic involved, though **so be warned**:
-
-* objects that get passed in to be logged won't be cloned or serialised on the way in;  that decision is up to you.
 
 ## API 
 
@@ -41,6 +37,10 @@ Logs are kept in the format:
     firstLog.val       // whatever value was logged
 
 ```
+
+### Custom Cloning
+
+If you need to change what cloning method is used, just override the `clone` function.  done!
 
 ### Wrapping functions for logging purposes
 

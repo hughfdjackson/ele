@@ -14,13 +14,27 @@ void function(root){
 
     // library
     var ele = factory({
+
+        // creates an instance-specific logs array
         init: function(){
             this.logs = []
         }
+
+        // A clone hook that lets you clone items 
+        // if you need to
+      , clone: function(o){ 
+            return typeof o == 'object' ? JSON.parse(JSON.stringify(o)) 
+            :/* otherwise */              o    
+        }
+
+        // stores a JS value in the logs
       , log : function(o){
-            var log = { timestamp: +new Date, val: o }
+            var log = { timestamp: +new Date, val: this.clone(o) }
             this.logs.push(log)
         }
+
+        // returns a function that can be called as normal
+        // but will also log the return value
       , wrap: function(fn){
             var _this = this
 
