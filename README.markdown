@@ -45,6 +45,21 @@ Logs are kept in the format:
 
 If you need to change what cloning method is used, just replace `.clone` with your own custom function.  The method takes one argument (the value to be cloned), and returns a clone.
 
+For Example
+
+```javascript
+    // replace with an identity function for no-clone
+    log.clone = function(o){ return o }
+
+    // a shallow clone function
+    log.clone = function(o){
+        var copy = {}
+        for ( var prop in o ) copy[prop] = o[prop]
+        return copy
+    }
+
+```
+
 ### Wrapping functions for logging purposes
 
 With impure functions (like Math.random, for instance), it'd be nice to conveniently wrap it with a logger, letting us log each and every output from it.  Used properly, this might let us (for instance) play back a game session where random chance is involved.  This can be achieved with the .wrap method:
