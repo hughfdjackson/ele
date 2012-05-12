@@ -3,7 +3,7 @@
 Ele is a super-simple logging library.  It lets you:
 
 * store clones of non-function JS values (taking a 'JSON clone'\* of all object values)
-* wrap any function to create a new function whose return values are auto-logged
+* wrap any function to create a new function whose returns and arguments are auto-logged
 * See the timestamp associated with any occurance of logging
 
 
@@ -22,7 +22,7 @@ Creating a logger instance is as easy as calling the library function:
 Logs are created with the .log method, which stores the log and generates the timestamp:
 
 ```javascript
-    log.log({ comment: "Ele's pretty neat", user: "hughfdjackson(i'm not biased)"})
+    log.log({ comment: "Ele's pretty neat", user: "hughfdjackson(i'm not biased)" })
 ```
 
 ### Retrieving logs
