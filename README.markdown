@@ -77,4 +77,4 @@ With impure functions (like Math.random, for instance), it'd be nice to convenie
 
 ## Tests
 
-Feel free to [run the test suite](http://hughfdjackson.github.com/ele/test/)
+Feel free to [run the test suite](http://hughfdjackson.github.com/ele/test/).
