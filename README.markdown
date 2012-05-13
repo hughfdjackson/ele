@@ -14,8 +14,7 @@ Ele is a super-simple logging library.  It lets you:
 Creating a logger instance is as easy as calling the library function:
 
 ```javascript
-    var log = ele()
-```
+    var log = ele() ```
 
 ### Logging 
 
@@ -70,7 +69,7 @@ With impure functions (like Math.random, for instance), it'd be nice to convenie
     var firstLog    = log.logs[0]
 
     firstLog.val.args   // an array of arguments that random was called with
-    firstLog.val.name   // 'random', the second argument passed to log.wrap
+    firstLog.val.meta   // 'random', the second argument passed to log.wrap
     firstLog.val.result // the value returned from the wrapped function
 ```
 

@@ -37,12 +37,12 @@ void function(root){
 
         // returns a function that can be called as normal
         // but will also log the return value
-      , wrap: function(fn, name){
+      , wrap: function(fn, meta){
             var _this = this
 
             return function(){ 
                 var res = fn.apply(this, arguments)
-                _this.log({ result: res, args: slice.apply(arguments), name: name })
+                _this.log({ result: res, args: slice.apply(arguments), meta: meta })
                 return res
             }  
         }

@@ -55,5 +55,5 @@ test('wrap', function(){
     equal(res, val.result)
     equal('foo', val.args[0])
     ok(val.args instanceof Array)
-    equal(val.name, 'random')
+    equal(val.meta, 'random')
 })
