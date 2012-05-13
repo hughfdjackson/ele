@@ -42,7 +42,7 @@ Logs are kept in the format:
 
 ### Custom Cloning
 
-If you need to change what cloning method is used, just replace `.clone` with your own custom function.  The method takes one argument (the value to be cloned), and returns a clone.
+If you need to change what cloning method is used, just replace .clone with your own custom function.  The method takes one argument (the value to be cloned), and returns a clone.
 
 For Example
 
@@ -73,3 +73,8 @@ With impure functions (like Math.random, for instance), it'd be nice to convenie
     firstLog.val.name   // 'random', the second argument passed to log.wrap
     firstLog.val.result // the value returned from the wrapped function
 ```
+
+
+# Tests
+
+Feel free to [run the test suite](http://hughfdjackson.github.com/ele/test/)
