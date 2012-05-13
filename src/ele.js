@@ -3,15 +3,13 @@ void function(root){
     // util
     var factory = function(o){
         var f = function(){ if ( this.init ) this.init.apply(this, arguments) }
-        f.prototype = o
-        return function(){ 
-            return new f
+            f.prototype = o
+            return function(){ 
+                return new f
+            }
         }
-    }
-
-    var extend = function(t, f){ for ( var p in f ) t[p] = f[p]; return t }
-
-    var slice  = Array.prototype.slice
+      , extend = function(t, f){ for ( var p in f ) t[p] = f[p]; return t }
+      , slice  = Array.prototype.slice
 
 
     // library
