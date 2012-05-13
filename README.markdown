@@ -75,6 +75,6 @@ With impure functions (like Math.random, for instance), it'd be nice to convenie
 ```
 
 
-# Tests
+## Tests
 
 Feel free to [run the test suite](http://hughfdjackson.github.com/ele/test/)
