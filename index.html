@@ -1,0 +1,86 @@
+<!doctype html>
+<head>
+    <title> Ele (the elephant that never forgets) </title>
+    <link rel="stylesheet" href="/assets/themes/hugh/css/screen.css">
+</head>
+
+<body>
+<h2>Ele (the elephant that never forgets)</h2>
+
+<p>Ele is a super-simple logging library.  It lets you:</p>
+
+<ul><li>store clones of non-function JS values (taking a &#39;JSON clone&#39;* of all object values)</li><li>wrap any function to create a new function whose returns and arguments are auto-logged</li><li>See the timestamp associated with any occurance of logging</li></ul>
+
+<p>* <em>&#39;JSON clone&#39; refers to using JSON.stringify, then JSON.parse on a value, returning a JS value that won&#39;t be mutated later.</em></p>
+
+<h2>API</h2>
+
+<p>Creating a logger instance is as easy as calling the library function:</p>
+
+<p><code>javascript
+    var log = ele()
+</code></p>
+
+<h3>Logging</h3>
+
+<p>Logs are created with the .log method, which stores the log and generates the timestamp:</p>
+
+<p><code>javascript
+    log.log({ comment: &quot;Ele&#39;s pretty neat&quot;, user: &quot;hughfdjackson(i&#39;m not biased)&quot; })
+</code></p>
+
+<h3>Retrieving logs</h3>
+
+<p>All logs are stored in the .logs array, making access nice and easy: </p>
+
+<p><code>javascript
+    var firstLog = log.logs[0]
+</code></p>
+
+<p>Logs are kept in the format:</p>
+
+<p><code>javascript
+    firstLog.timestamp // the timestamp for the log&#39;s creation
+    firstLog.val       // clone of the value logged
+</code></p>
+
+<h3>Custom Cloning</h3>
+
+<p>If you need to change what cloning method is used, just replace .clone with your own custom function.  The method takes one argument (the value to be cloned), and returns a clone.</p>
+
+<p>For Example</p>
+
+<p><code></code>`javascript
+    // replace with an identity function for no-clone
+    log.clone = function(o){ return o }</p>
+
+<pre><code>// a shallow clone function
+log.clone = function(o){
+    var clone = {}
+    for ( var prop in o ) clone[prop] = o[prop]
+    return clone
+}</code></pre>
+
+<p><code></code>`</p>
+
+<h3>Wrapping functions for logging purposes</h3>
+
+<p>With impure functions (like Math.random, for instance), it&#39;d be nice to conveniently wrap it with a logger, letting us log each and every output from it.  Used properly, this might let us (for instance) play back a game session where random chance is involved.  This can be achieved with the .wrap method:</p>
+
+<p><code></code>`javascript
+    var log         = ele()
+      , random      = log.wrap(Math.random, &#39;random&#39;)
+      , randomNum   = random()</p>
+
+<pre><code>var firstLog    = log.logs[0]
+
+firstLog.val.args   // an array of arguments that random was called with
+firstLog.val.name   // &#39;random&#39;, the second argument passed to log.wrap
+firstLog.val.result // the value returned from the wrapped function</code></pre>
+
+<p><code></code>`</p>
+
+<h2>Tests</h2>
+
+<p>Feel free to <a href="http://hughfdjackson.github.com/ele/test/">run the test suite</a>.</p>
+</body>
