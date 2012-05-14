@@ -14,7 +14,8 @@ Ele is a super-simple logging library.  It lets you:
 Creating a logger instance is as easy as calling the library function:
 
 ```javascript
-    var log = ele() ```
+    var log = ele() 
+```
 
 ### Logging 
 
