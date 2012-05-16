@@ -37,10 +37,12 @@ void function(root){
         // but will also log the return value
       , wrap: function(fn, meta){
             var _this = this
+            
+            meta = this.clone(meta)
 
             return function(){ 
                 var res = fn.apply(this, arguments)
-                _this.log({ result: res, args: slice.apply(arguments), meta: meta })
+                _this.log({ result: res , args: slice.apply(arguments) , meta: meta })
                 return res
             }  
         }
