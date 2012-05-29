@@ -2,7 +2,7 @@ void function(root){
 
     // util
     var factory = function(o){
-        var f = function(){ if ( this.init ) this.init.apply(this, arguments) }
+            var f = function(){ if ( this.init ) this.init.apply(this, arguments) }
             f.prototype = o
             return function(){ 
                 return new f
