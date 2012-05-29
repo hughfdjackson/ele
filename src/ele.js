@@ -8,7 +8,6 @@ void function(root){
                 return new f
             }
         }
-      , extend = function(t, f){ for ( var p in f ) t[p] = f[p]; return t }
       , slice  = Array.prototype.slice
 
 
